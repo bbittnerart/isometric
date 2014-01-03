@@ -59,21 +59,21 @@ THE SOFTWARE.
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
     
     <!-- Engine Scripts -->
-    <script type="text/javascript" src="/com/common.js"></script>
-    <script type="text/javascript" src="/com/particles/Range.js"></script>
-    <script type="text/javascript" src="/com/particles/Particle.js"></script>
-    <script type="text/javascript" src="/com/particles/Emitter.js"></script>
-    <script type="text/javascript" src="/com/particles/Effect.js"></script>
-    <script type="text/javascript" src="/com/particles/EffectLoader.js"></script>
-    <script type="text/javascript" src="/com/Canvas/Input.js"></script>
-    <script type="text/javascript" src="/com/Canvas/Control.js"></script> 
-    <script type="text/javascript" src="/com/xml/XMLPopulate.js" ></script>
-    <script type="text/javascript" src="/com/img/ImageLoader.js"></script>
-    <script tppe="text/javascript" src="/com/iso/Isometric.js"></script>
-    <script tppe="text/javascript" src="/com/pathfind/pathfind.js"></script>
+    <script type="text/javascript" src="../com/common.js"></script>
+    <script type="text/javascript" src="../com/particles/Range.js"></script>
+    <script type="text/javascript" src="../com/particles/Particle.js"></script>
+    <script type="text/javascript" src="../com/particles/Emitter.js"></script>
+    <script type="text/javascript" src="../com/particles/Effect.js"></script>
+    <script type="text/javascript" src="../com/particles/EffectLoader.js"></script>
+    <script type="text/javascript" src="../com/Canvas/Input.js"></script>
+    <script type="text/javascript" src="../com/Canvas/Control.js"></script> 
+    <script type="text/javascript" src="../com/xml/XMLPopulate.js" ></script>
+    <script type="text/javascript" src="../com/img/ImageLoader.js"></script>
+    <script tppe="text/javascript" src="../com/iso/Isometric.js"></script>
+    <script tppe="text/javascript" src="../com/pathfind/pathfind.js"></script>
     <!--                -->
     <!-- Game Scripts   -->
-    <script type="text/javascript" src="/game/Clock.js"></script>
+    <script type="text/javascript" src="../game/Clock.js"></script>
     <!--                -->
 
 
@@ -98,14 +98,14 @@ THE SOFTWARE.
       var XML = new XMLPopulate(); // Used for loading the XML maps TODO: Change maps to JSON rather than XML
       var imgLoader = new ImageLoader(); // Used for loading all images used within game
 
-      XML.loadXML('/com/xml/XMLFiles.php?folder=Samples/sample1Img/'); // PHP is used to output a list of images within the directory for easier loading
-      var groundImages = imgLoader.loadImageArray('/Samples/sample1Img/', XML.getContent('files', 'file'));
+      XML.loadXML('../com/xml/XMLFiles.php?folder=Samples/sample1Img/'); // PHP is used to output a list of images within the directory for easier loading
+      var groundImages = imgLoader.loadImageArray('../Samples/sample1Img/', XML.getContent('files', 'file'));
 
       var loadTimer = setInterval(loadAll, 100);
 
       function loadAll() {
         if (imgLoader.loaded === imgLoader.to_load) {
-         XML.loadXML('/Samples/sample1.xml');// Load the map 
+         XML.loadXML('../Samples/sample1.xml');// Load the map 
 
           clearInterval(loadTimer);
           var game = new main(0, 0, 14, 14);  // X & Y drawing position, and tile span to draw 
